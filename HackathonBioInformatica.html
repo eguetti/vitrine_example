@@ -13175,7 +13175,51 @@ div#notebook {
         <iframe
             width="1000"
             height="700"
-            src="https://query.wikidata.org/embed.html#%0A%23defaultView%3ABarChart%0A%23Qualis%20Publica%C3%A7%C3%B5es%20Helder%20Nakaya%0ASeLECT%20DISTINCT%20%3FqualisLabel%20%20%28count%28%20%3Fqualis%29%20as%20%3FQualis%29%20%3FvenueLabel%20WHERE%20%7B%0A%20%20%20%0A%20%20%3Farticle%20wdt%3AP50%20wd%3AQ42614737%20.%20%20%20%0A%20%20%3Farticle%20wdt%3AP1433%20%3Fvenue%20.%20%20%20%0A%20%20OPTIONAL%20%7B%0A%20%20%20%20%3Fvenue%20wdt%3AP9683%20%3Fqualis%20.%0A%20%20%20%20%3Fqualis%20rdfs%3Alabel%20%3Flabel_%20%20.%20%20%20%20%20%20%0A%20%20%7D%20%0A%20%20%0A%20%20FILTER%20%20EXISTS%20%7B%3Fvenue%20wdt%3AP9683%20%3Fqualis%7D%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22%5BAUTO_LANGUAGE%5D%2Cen%22.%20%7D%0A%20%20%0A%7D%20Group%20by%20%3FqualisLabel%20%3FvenueLabel%0AORDER%20BY%20Desc%20%28%3FQualis%29%0A"
+            src="https://query.wikidata.org/embed.html#%0A%23defaultView%3ABarChart%0A%23Qualis%20Publica%C3%A7%C3%B5es%20Helder%20Nakaya%0ASeLECT%20DISTINCT%20%3FqualisLabel%20%20%28count%28%20distinct%20%3Fqualis%29%20as%20%3FQualis%29%20%3FvenueLabel%20WHERE%20%7B%0A%20%20%20%0A%20%20%3Farticle%20wdt%3AP50%20wd%3AQ42614737%20.%20%20%20%0A%20%20%3Farticle%20wdt%3AP1433%20%3Fvenue%20.%20%20%20%0A%20%20OPTIONAL%20%7B%0A%20%20%20%20%3Fvenue%20wdt%3AP9683%20%3Fqualis%20.%0A%20%20%20%20%3Fqualis%20rdfs%3Alabel%20%3Flabel_%20%20.%20%20%20%20%20%20%0A%20%20%7D%20%0A%20%20%0A%20%20FILTER%20%20EXISTS%20%7B%3Fvenue%20wdt%3AP9683%20%3Fqualis%7D%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22%5BAUTO_LANGUAGE%5D%2Cen%22.%20%7D%0A%20%20%0A%7D%20Group%20by%20%3FqualisLabel%20%3FvenueLabel%0AORDER%20BY%20Desc%20%28%3FQualis%29%0A"
+            frameborder="0"
+            allowfullscreen
+        ></iframe>
+        
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+<font size='+0.8'>Publicações ordenadas por número de co-autores e classificação Qualis Capes do pesquisador <b>Helder Nakaya</b>.</font>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+
+        <iframe
+            width="1000"
+            height="700"
+            src="https://query.wikidata.org/embed.html#%0A%23defaultView%3ABarChart%0A%23%0ASELECT%20distinct%20%3FQualisLabel%20%28COUNT%20%20%28%20distinct%20%3Fcoautores%29%20AS%20%3FAutores%29%20%20%20%3FarticleLabel%20%3FAno%20%20WHERE%20%7B%20%20%0A%20%20%3Farticle%20wdt%3AP50%20wd%3AQ42614737%20.%20%20%0A%20%20%3Farticle%20wdt%3AP50%20%3Fcoautores.%20%20%20%20%0A%20%20%3Farticle%20wdt%3AP1433%20%3Fvenue%20.%20%20%20%0A%20%20%0A%20%20OPTIONAL%20%7B%0A%20%20%20%20%3Farticle%20wdt%3AP577%20%3Fdata.%0A%20%20%20%20BIND%28YEAR%28%3Fdata%29%20AS%20%3FAno%29%20%20%0A%20%20%7D%20%20%20%0A%20%20%0A%20%20OPTIONAL%20%7B%20%20%20%20%0A%20%20%20%20%3Fvenue%20wdt%3AP9683%20%3FQualis%20.%0A%20%20%20%20%3FQualis%20rdfs%3Alabel%20%3Flabel_%20%20.%20%20%20%20%20%20%0A%20%20%7D%20%0A%20%20FILTER%20%20%20EXISTS%20%7B%3Fvenue%20wdt%3AP9683%20%3Fqualis%7D%0A%20%20%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22%5BAUTO_LANGUAGE%5D%2Cen%22.%20%7D%0A%20%20%0A%7D%20%20Group%20by%20%3FQualisLabel%20%20%3FAutores%20%20%3FarticleLabel%20%3FAno%0AOrder%20by%20Desc%28%3FQualisLabel%29%0A%0A"
             frameborder="0"
             allowfullscreen
         ></iframe>
